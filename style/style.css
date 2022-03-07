@@ -94,9 +94,9 @@ main {
 }
 
 main img {
-  width: 40%;
+  width: 400px;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 section img {
@@ -138,4 +138,7 @@ footer {
   :root {
     --width-page: 320px;
   }
+
+  main img {
+    width: 280px;
 }
