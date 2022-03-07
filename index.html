@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECMAScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+  <link href="style/reset.css"   rel="stylesheet"/>
+  <link href="style/style.css"   rel="stylesheet"/>
+  <link href="images/js.png" rel="icon" type="image/x-icon" /> 
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Resources" target="_blank">
+        <ion-icon name="logo-javascript" onclick="initiateApp()"></ion-icon>
+      </a>
+      <div id="ecmascript"  onclick="showSection(id)">ECMAScript x JavaScript </div>
+      <div id="strict-mode" onclick="showSection(id)">Strict Mode             </div>
+      <div id="hoisting"    onclick="showSection(id)">Hoisting                </div>
+      <div id="variaveis"   onclick="showSection(id)">Variáveis               </div>
+      <div id="repeticao"   onclick="showSection(id)">Repetição com for       </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <img src="https://media3.giphy.com/media/fuJPZBIIqzbt1kAYVc/giphy.gif?cid=790b7611688977e9637cb5a0faa8ca330695caa1777d6d17&rid=giphy.gif&ct=g" />
+
+    <section class="ecmascript hidden">
+      <p>
+        ECMA (European Computer Manufacturers Association) é associação sem fins lucractivos que trabalha para a 
+        padronização de sistemas de informação desde os anos 1960. Atualmente é chamada de ECMA International e 
+        atua em todo o mundo. 
+      </p>
+      <br>
+      <p><strong>
+        ECMAScript x JavaScript
+      </strong></p>
+      <br>
+      <p>
+        ECMAScript é uma padronização criada a partir da linguagem JavaScript que desde 2015 vem trazendo grandes 
+        melhorias à comunidade JS. Dentre elas, iterar objetos, declarar variáveis utilizando let e const,
+        modularização de classes, etc.
+      </p>
+      <br>
+      
+      <!--DEFAULT PARAMETERS-->
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Default Parameters</strong>
+        <p><br>Permite que parâmetros sejam inicializados com valores iniciais caso não seja passado nenhum valor
+               ou o valor seja undefined. </p> <br>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Antes</small>      
+        <img src="./images/dp_antes.png" alt="ts_antes"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Depois</small>      
+        <img src="./images/dp_depois.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Passando undefined vs. outros valores "falsy"</small>      
+        <img src="./images/dp_falsy.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Default_parameters">Default Parameters</a></p> <br>
+        
+      </p>
+      <br>
+
+      <!--TEMPLATE STRINGS-->
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Template Strings</strong>
+        <p><br>Trata-se de uma nova forma de criar strings. </p> <br>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Antes</small>      
+        <img src="./images/ts_antes.png" alt="ts_antes"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Depois</small>      
+        <img src="./images/ts_depois.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Tagged template strings</small>      
+        <img src="./images/ts_tagged.png" alt="ts_antes"/>
+        
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Strings Raw</small>      
+        <img src="./images/ts_raw.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Template_literals">Template literals</a></p> <br>
+        
+      </p>
+      <br>
+
+      <!--DESTRUCTURING-->
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Destructuring</strong>
+        <p><br>Permite extrair dados de array e objetos em variáveis distintas. </p> <br>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Sintaxe</small>      
+        <img src="./images/de_sintaxe.png" alt="ts_antes"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Atribuição básica</small>      
+        <img src="./images/de_basica.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Atribuição separada</small>      
+        <img src="./images/de_separada.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Valores padrão</small>      
+        <img src="./images/de_padrao.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Trocando variáveis</small>      
+        <img src="./images/de_trocando.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Ignorando alguns valores</small>      
+        <img src="./images/de_ignorando.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Atribuindo o resto de um array para uma variável</small>      
+        <img src="./images/de_atribuindo.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Objeto</small>      
+        <img src="./images/de_objeto.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Objeto aninhado e desestruturação de array</small>      
+        <img src="./images/de_aninhado.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Destructuring</a></p> <br>
+        
+      </p>
+
+     
+    </section>
+
+    <section class="strict-mode hidden">
+
+      <p>
+        Disponível desde ECMAScript 5. Strict mode muda erros de sintaxe aceitos, como atribuir valor a uma propriedade só de leitura, 
+        ou que não existe, acessar uma variável/objeto que não existe. Trata-se de uma "configuração" opcional.
+      </p>
+      <br>
+     
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Invocando strict mode</strong>
+        <img src="./images/sm_invocando.png" alt="ts_antes"/>      
+        
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Strict mode para funções</strong>   
+        <img src="./images/sm_funcoes.png" alt="ts_antes"/>   
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Convertendo equívocos em erros</strong>        
+        <br>
+        <p><br></p>
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Impossibilita criar variáveis globais acidentalmente</small> 
+        <img src="./images/sm_impossibilita.png" alt="ts_antes"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Atribuições que falhariam silenciosamente lançam uma exceção</small>      
+        <img src="./images/sm_silenciosamente.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Deletar propriedades não-deletáveis lançam exceções</small>      
+        <img src="./images/sm_delete.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Nome de parâmetros únicos</small>      
+        <img src="./images/sm_unicos.png" alt="ts_depois"/>
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Proíbe definir propriedades em valores primitivos</small>      
+        <img src="./images/sm_primitivos.png" alt="ts_depois"/>
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Palavras-chave reservadas</strong>      
+        <img src="./images/sm_palavras.png" alt="ts_depois"/>
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Documentação oficial</strong>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode">Strict mode</a></p> <br>
+        
+      </p>
+      <br>
+
+    </section>
+
+    <section class="hoisting hidden">
+      <p>
+        Hoisting ou içamento é o comportamento padrão do JavaScript de mover as declarações para o topo. 
+        Uma variável pode ser usada antes de ser declarada.
+      </p>
+      <br>
+     
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Exemplo</strong>
+        <img src="./images/ho_ex_1.png" alt="ts_antes"/>      
+        <img src="./images/ho_ex_2.png" alt="ts_antes"/> 
+        
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>JavaScript eleva as declarações, não as inicializações</strong>   
+        <img src="./images/ho_eleva1.png" alt="ts_antes"/>      
+        <img src="./images/ho_eleva2.png" alt="ts_antes"/>  
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Outros exemplos</strong>        
+        <img src="./images/ho_outros.png" alt="ts_antes"/> 
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Documentação oficial</strong>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting">Hoisting</a></p> <br>
+        
+      </p>
+      <br>
+    </section>
+
+    <section class="variaveis hidden">
+      <p>
+        Hoisting ou içamento é o comportamento padrão do JavaScript de mover as declarações para o topo. 
+        Uma variável pode ser usada antes de ser declarada.
+      </p>
+      <br>
+     
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Var</strong>
+        <p><br>Declara uma variável local no escopo do bloco atual e permite a criação de variáveis com o mesmo nome no mesmo escopo.</p>
+
+        <p><br>Variáveis declaradas com var estão sujeitas ao hoisting.</p>
+        <br>
+        <img src="./images/va_var.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Ordem de declaração</small>   
+        <img src="./images/va_ordem.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/var">Var</a></p> <br>
+        
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Let</strong>   
+        <p><br>Declara uma variável local no escopo do bloco atual e NÃO permite a criação de variáveis com o mesmo nome no mesmo escopo.</p>
+
+        <p><br>Variáveis declaradas com let NÃO estão sujeitas ao hoisting. Isso significa que você não pode usar uma variável 
+               sem tê-la declarado e inicializado.</p>
+        <br>
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Escopo</small>    
+        <img src="./images/va_escopo.png" alt="ts_antes"/> 
+        <img src="./images/va_escopo2.png" alt="ts_antes"/> 
+        <img src="./images/va_escopo3.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Expressão let</small>    
+        <img src="./images/va_expressao.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Let dentro de um bloco</small>    
+        <img src="./images/va_bloco.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/let">Let</a></p> <br>
+        
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>Const</strong>   
+        <p><br>Cria uma variável com valor fixo - somente leitura. Constantes possuem escopo de bloco, assim como as variáveis declaradas com let.</p>
+        <p><br>Toda constante requer um inicializador.</p>
+        <p><br>Uma const cria uma referência a um valor. Isso não significa que esse valor é imutável. Se o conteúdo da variável for um objeto, 
+           então o conteúdo do objeto pode ser alterado.</p>
+        <br>   
+        <img src="./images/va_const.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/const">Const</a></p> <br>
+
+      </p>
+      <br>
+    </section>
+
+    <section class="repeticao hidden">
+    
+      <p>
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>For</strong>
+        <p><br>Cria um loop com três expressões opcionais.</p>
+        <br>
+        <img src="./images/rep_for_sintaxe.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Exemplo</small>   
+        <img src="./images/rep_for_exemplo.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Expressões opcionais</small>   
+        <img src="./images/rep_for_opc1.png" alt="ts_antes"/>  
+        <img src="./images/rep_for_opc2.png" alt="ts_antes"/>  
+        <img src="./images/rep_for_opc3.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for">For</a></p> <br>
+        
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>forEach()</strong>   
+        <p><br>Trata-se de um método que executa uma dada função em cada elemento de um array.</p>
+        <br>
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Sintaxe</small>    
+        <img src="./images/rep_each_sintaxe.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Parâmetros</small>    
+        <img src="./images/rep_each_parametros.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Importante</small>    
+        <img src="./images/rep_each_importante.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Exemplo</small>    
+        <img src="./images/rep_each_exemplo.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach</a></p> <br>
+        
+
+        <ion-icon name="caret-forward-outline"></ion-icon> <strong>For...Of</strong>   
+        <p><br>Cria um loop que percorre objetos iterativos como Array, Map, Set, etc.</p>
+        <br>   
+        <img src="./images/rep_of_sintaxe.png" alt="ts_antes"/> 
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Array</small>    
+        <img src="./images/rep_of_array.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>String</small>    
+        <img src="./images/rep_of_string.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Map</small>    
+        <img src="./images/rep_of_map.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Set</small>    
+        <img src="./images/rep_of_set.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>DOM</small>    
+        <img src="./images/rep_of_dom.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>for...of e for...in</small>    
+        <p><br>O loop for...in irá iterar sobre todas as propriedades enumeráveis de um objeto.</p>
+        <br> 
+        <img src="./images/rep_of_for_in.png" alt="ts_antes"/>  
+
+        <ion-icon name="chevron-forward-outline"></ion-icon> <small>Documentação oficial</small>       
+        <p> <br> &emsp; MDN: <a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/for...of">For...Of</a></p> <br>
+
+      </p>
+      <br>
+    </section>
+    
+  </main>
+
+  <br>
+
+  <footer>
+    &#127279; Simone
+  </footer>
+
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  <script src="script/script.js"></script>
+</body>
+</html>
